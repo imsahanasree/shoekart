@@ -1,0 +1,767 @@
+/*FONT DEFINITIONS*/
+@font-face {
+  font-family: 'nike-font';
+  font-style: normal;
+  src: url("./fonts/Nike-Futura-ot-300.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'regular-font';
+  font-style: normal;
+  src: url("./fonts/HelveticaNowText.woff2") format('woff2');
+}
+
+
+/* MAIN BODY & LAYOUT STYLING */
+* {
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+body {
+  background-color: white;
+  color: black;
+  overflow-y: scroll;
+}
+.outer-container {
+  background-color: white;
+  width: 80%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 65px;
+  height: calc(100vh - 65px);
+}
+
+
+/* HEADER STYLING */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 65px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-top: 8px solid rgb(111, 111, 111);
+  z-index: 100;
+  transition: top 0.3s;
+  box-shadow: rgba(193, 193, 193, 0.8) 0 0 90px 33px
+}
+header .header-logo {
+  font-family: 'nike-font';
+  font-size: 1rem;
+}
+header nav {
+  margin-right: 15px;
+  font-family: 'regular-font';
+  display: flex;
+  gap: 20px;
+  /* grid-template-columns: repeat(8, minmax(80px, 1fr)); */
+}
+@media (max-width:1200px){
+  header nav{
+    gap: 5px;
+  }
+}
+header nav .icon-link{
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.icon-link svg {
+  width: 22px;
+  height: 22px;
+}
+@media (max-width: 1200px) {
+  .icon-link svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+header nav .icon-link:hover{
+  background-color: #cecece;
+}
+header nav a, header a {
+  text-decoration: none;
+  color: black;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.log-out{
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .log-out {
+    font-size: 0.71rem; /* Adjust font size for smaller screens */
+  }
+  header{
+    padding: 5px;
+  }
+}
+
+
+/* INDEX PAGE STYLING */
+.index-page-top-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.index-page-img {
+  height: auto;
+  /* width: 891px; */
+  max-width: 800px;
+  width: 100%;
+  z-index: 0;
+}
+.index-msg{
+  font-weight: 'bold';
+  font-family: 'nike-font';
+  font-size: 4rem;
+
+}
+@media (max-width: 1200px) {
+  .index-msg {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+}
+.shoe-text{
+  position: absolute;
+  z-index: 1;
+  top: 13px;
+  width: 610px;
+  height: 80px;
+}
+
+
+/* CARD STYLING */
+.column {
+  width: 25%;
+  min-width: 250px;
+  float: left;
+  padding: 15px;
+}
+@media (max-width: 1200px) {
+  .column {
+    width: 80%;
+    margin-left: 10%;
+    min-width: unset;
+    padding: 15px;
+    float: none; /* Remove float */
+    height: auto; /* Let the height adjust based on the content */
+    margin-bottom: 15px; /* Add some space between cards */
+  }
+}
+.shoe-card {
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.shoe-card img {
+  height: 300px;
+  width: 100%;
+}
+
+.shoe-card:hover {
+  background-color: rgb(211, 211, 211);
+  cursor: pointer;
+}
+
+
+/*SHOE PAGE STYLING*/
+.shoe-page-outer-grid{
+  margin-top: 100px;
+  width: 90%;
+  display: grid;
+  /* grid-template-columns: 80px 1fr 1fr; */
+  grid-template-columns: 80px auto 1fr;
+  grid-gap: 17px;
+}
+.shoe-page-photos{
+  overflow: hidden;
+}
+.shoe-page-outer-grid .shoe-page-photos .shoe-thumbnail{
+  width: 80px;
+  height: 80px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+.shoe-page-outer-grid .shoe-page-photos .shoe-thumbnail:hover{
+  opacity: 0.5;
+  transition-duration: 0.1s;
+}
+.shoe-page-outer-grid .shoe-page-left{
+  /*new added*/
+        width: auto;
+        max-width: 500px;
+  /*new added*/
+  position: relative;
+}
+.shoe-large-thumbnail{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  z-index: 0;
+}
+.topdiv{
+  font-family: 'regular-font';
+}
+.shoe-page-right{
+  /* text-align: center; */
+  margin-left: 20px;
+  margin-right: 20px;
+  display: block;
+  /*new added*/
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+  /*new added*/
+}
+.size-cards-divs{
+  margin-top: 5px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: auto;
+}
+.size-card{
+  width: 100%;
+  padding: 3px 0;
+  height: 45px;
+}
+
+.shoe-page-right .size-card button{
+  width: 100%;
+  font-family: 'regular-font';
+  background-color: white;
+  border: 1px solid rgb(212, 212, 212);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-shadow: none;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 45px;
+}
+.shoe-page-right .size-card button:hover{
+  border: 1px solid black;
+  transition: 0.06s;
+}
+.bottomdiv{
+  margin-top: 30px;
+  font-family: 'regular-font';
+  line-height-step: 200%;
+}
+@media (max-width: 768px) {
+  .shoe-page-outer-grid {
+    grid-template-columns: 1fr;  /* Changed to single column */
+    grid-template-rows: auto auto;  /* Ensures rows adjust based on content */
+  }
+
+  .shoe-page-right {
+    margin-left: 0;  /* Remove left margin */
+    margin-top: 20px;  /* Add top margin for spacing */
+    height: auto;  /* Adjust height based on content */
+  }
+}
+
+
+
+/*LOGIN & REGISTER PAGE STYLING*/
+.login h1, .register h1{
+  text-align: center;
+  font-family: 'nike-font';
+  margin-top: 100px;
+}
+form.login, form.register{
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: 'regular-font';
+  font-size: 1rem;
+}
+.login input, .register input{  
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 38px;
+  padding: 8px 14px;
+  border: 2px solid #ddd;
+  background-color: #ffffff;
+  border-radius: 22px;
+}
+.login button, .register button{
+  width: 60%;
+  height: 38px;
+  display: block;
+  padding: 5px 8px;
+  border-radius: 22px;
+  background-color: #555;
+  color: white;
+  margin: 0 auto;
+  font-family: 'nike-font';
+  cursor: pointer;
+}
+
+
+/*SEARCH IN SHOP PAGE STYLING*/
+.search-msg {
+  font-family: 'nike-font';
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 100px;
+}
+.search-shoe{
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 40%;
+  margin-left: 30%;
+}
+
+
+/*CONTACT US PAGE STYLING*/
+.emailform{
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px #b3b3b3 solid;
+  width: 50%;
+  margin-left: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width:1200px){
+  .emailform{
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.emailform label{
+  font-family: 'regular-font';
+}
+.email-form-data-input-section{
+  width: 100%;
+}
+.email-form-data-input-section input{
+  border-radius: 12px;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  height: 35px;
+  width: 45%;
+  padding: 10px;
+}
+.email-form-data-input-section input:focus{
+  border: 1px #ccc solid;
+}
+.submit-contact-form{
+  cursor: pointer;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background-color: #555;
+  outline: none;
+  width: 100%;
+  height: 35px;
+  color: white;
+  align-self: flex-end;
+  font-family: 'nike-font';
+}
+
+
+/*CART STYLING*/
+.cart-container{
+  padding: 15px;
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  border: 1px #b3b3b3 solid;
+}
+@media (max-width:1200px){
+  .cart-container{
+    width: 100%;
+    margin-left: 0;
+  } 
+  .cart-list-item{
+    grid-template-columns: 80px 1fr /*120px*/ 40px 5px 60px;
+    grid-gap: 2px;
+    overflow: auto;
+  }
+}
+.cart-amt-details {
+  margin-top: 30px;
+  width: 60%;
+  margin-left: 20%;
+}
+
+@media (max-width: 1200px) {
+  .cart-amt-details {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.cart-list-item{
+  margin-top: 10px;
+  grid-gap: 5px;
+  height: 80px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 1fr /*120px*/ 120px /*50px*/ 60px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.cart-list-item img{
+  object-fit: contain;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 7px;
+}
+.empty-cart img{
+  opacity: 60%;
+  width: 26%;
+  margin-left: 37%;
+}
+.empty-cart{
+  color: #b3b3b3;
+}
+
+
+
+/*ADMIN FEATURES STYLING*/
+.outercontainer {
+  position: absolute;
+  margin-left: -12.5%;
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  left: 0;
+  background-color:  rgb(224, 223, 223);
+}
+
+.navbar {
+  font-family: 'regular-font';
+  width: 200px;
+  background-color:white;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.butstyle {
+  background-color: white;
+  color: rgb(6, 6, 6);
+  padding: 10px 20px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight:bolder;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 95%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+}
+.butstyle:hover {
+  background-color: rgb(224, 223, 223);
+  color: black;
+  transform: translateY(-2px);
+}
+.display {
+  flex-grow: 1;
+  background-color:  rgb(224, 223, 223);
+  padding: 20px;
+  overflow-y: auto;
+  font-family:"regular-font";
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.display h1 {
+  font-family: 'nike-font';
+  text-align: center;
+  margin-top: 5px;
+}
+.cust-list-header {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 0.05fr 0.25fr 0.25fr 0.25fr 0.25fr;
+  border-radius: 7px;
+  margin-top: 10px;
+  margin-left: 5px;
+  height: 30px;
+  width: 100%;
+  overflow: hidden;
+  background-color:  rgb(224, 223, 223);
+  align-items: center;
+  justify-content: center;
+  font-weight:bolder;
+}
+
+.cust-list-header div, .cust-list-item div, .ord-list-item div {
+  flex: 1;
+  text-align: center;
+  font-family: 'regular-font';
+}
+.cust-list-header div {
+  font-weight: bold;
+  background: none;
+}
+.ord-list-header{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 0.13fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 20px;
+  border-radius: 7px;
+  margin-top: 10px;
+  margin-left: 14px;
+  height: 30px;
+  width: 100%;
+  overflow: hidden;
+  background-color:  rgb(224, 223, 223);
+  align-items: center;
+  justify-content: center;
+  font-family:'regular-font';
+  font-weight:bolder;
+ 
+}
+.ord-list-item {
+  display: grid;
+  grid-template-columns: 0.05fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 20px;
+  margin-top: 10px;
+  height: 55px;
+  width: 100%; 
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: white;
+  align-items: center;
+  font-weight: bolder;
+  padding: 10px;
+}
+.ord-list-item div, .ord-list-item button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cust-list-item{
+  display: grid;
+  grid-template-columns: 0.06fr 0.25fr 0.25fr 0.25fr 0.25fr;
+  margin-top: 10px;
+  height: 55px;
+  width: 100%; 
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: white;
+  align-items: center;
+  font-weight:bolder;
+}
+
+
+/* DropZone STYLING */
+.dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 10px;
+  padding: 20px;
+  color: #b3b3b3;
+  text-align: center;
+  cursor: pointer;
+}
+.thumb {
+  position: relative;
+  display: inline-flex;
+  border-radius: 2px;
+  border: 1px solid #eaeaea;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+@media (max-width:1200px){
+  .thumb{
+    width: 50px;
+    height: 50px;
+  }
+}
+.thumb:hover {
+  opacity: 0.37;
+}
+.thumbInner {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.thumb img {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+.removeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: red;
+  font-weight: 'bold';
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.thumb:hover .removeBtn {
+  opacity: 1;
+}
+.thumbsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+
+
+/*popup for orders*/
+/* Modal overlay styling */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Dims the background with a semi-transparent black */
+  position: fixed; /* Ensures the overlay covers the entire viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex; /* Centers the modal */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal styling */
+.modal {
+  position: relative; /* Relative positioning for the modal */
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh; /* Set maximum height of the modal */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Add space between header and content */
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Prevent scrolling on the background content */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Additional styling */
+.order-shoes-details {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.shoe-item {
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  grid-gap: 25px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+@media (max-width:1200px){
+  .shoe-item{
+    font-size: 0.83rem;
+  }
+}
+
+/*VIEW FAVORITES */
+.pop-header{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 50px 1fr 1fr 20px;
+  border-radius: 7px;
+  margin-top: 10px;
+  height: 30px;
+  width: 100%;
+  overflow: hidden;
+  background-color:  rgb(224, 223, 223);
+  align-items: center;
+  justify-content: center;
+  font-family:'regular-font';
+  font-weight:bolder;
+}
+.pop-header > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.fav-item{
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 50px;
+  margin-top: 10px;
+  height: 55px;
+  width: 100%; 
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: white;
+  align-items: center;
+  font-weight:bolder;
+}
+.fav-item > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
