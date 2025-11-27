@@ -24,26 +24,6 @@ Backend: Node.js, Express.js, MongoDB, Mongoose
 
 
 
-Folder Structure
-
-project/
-│
-├── frontend/
-│   └── src/
-│       ├── components/
-│       ├── pages/
-│       ├── services/
-│       ├── App.js
-│       └── index.js
-│
-└── backend/
-    ├── config/
-    ├── controllers/
-    ├── models/
-    ├── routes/
-    └── server.js
-
-
 Installation
 
 Backend
